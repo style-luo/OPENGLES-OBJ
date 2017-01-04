@@ -232,8 +232,9 @@ void writeCvertices(ObjModel & objmodel, Model model)
 void writeCpositions(ObjModel & objmodel, Model model, vector< vector<float>>&  faces, vector< vector<float>>&  positions, int counts[])
 {
     objmodel.positions = new float[model.vertices*3];
+    objmodel.verticesIndex = new float[model.vertices];
     // Positions
-    int idx =0;
+    int idx =0,idx2 = 0;
     for(int j=0; j<model.materials; j++)
     {
         counts[j] = 0;
@@ -256,6 +257,9 @@ void writeCpositions(ObjModel & objmodel, Model model, vector< vector<float>>&  
                     objmodel.positions[idx++] = positions[vC][0];
                     objmodel.positions[idx++] = positions[vC][1];
                     objmodel.positions[idx++] = positions[vC][2];
+                    objmodel.verticesIndex[idx2++] = vA;
+                    objmodel.verticesIndex[idx2++] = vB;
+                    objmodel.verticesIndex[idx2++] = vC;
                     counts[j] +=3;
                 }
             }
@@ -265,7 +269,8 @@ void writeCpositions(ObjModel & objmodel, Model model, vector< vector<float>>&  
 void writeCtexels(ObjModel & objmodel, Model model, vector< vector<float>>&  faces, vector< vector<float>>& texels)
 {
     objmodel.texels =new float[ model.vertices*2];
-    int idx =0;
+    objmodel.texelsIndex = new float[model.vertices];
+    int idx =0,idx2=0;
     for(int j=0; j<model.materials; j++)
     {
         for(int i=0; i<model.faces; i++)
@@ -283,6 +288,9 @@ void writeCtexels(ObjModel & objmodel, Model model, vector< vector<float>>&  fac
                     objmodel.texels[idx++] = texels[vB][1];
                     objmodel.texels[idx++] = texels[vC][0];
                     objmodel.texels[idx++] = texels[vC][1];
+                    objmodel.texelsIndex[idx2++] = vA;
+                    objmodel.texelsIndex[idx2++] = vB;
+                    objmodel.texelsIndex[idx2++] = vC;
                 }
             }
             
@@ -292,8 +300,8 @@ void writeCtexels(ObjModel & objmodel, Model model, vector< vector<float>>&  fac
 void writeCnormals(ObjModel & objmodel, Model model, vector< vector<float>>& faces, vector< vector<float>>& normals)
 {
     objmodel.normals = new float[model.vertices*3];
-    int idx =0;
-    int vA  =0;
+    objmodel.normalsIndex = new float[model.vertices];
+    int idx =0,idx2=0;
     for(int j=0; j<model.materials; j++)
     {
         for(int i=0; i<model.faces; i++)
@@ -314,6 +322,10 @@ void writeCnormals(ObjModel & objmodel, Model model, vector< vector<float>>& fac
                     objmodel.normals[idx++] = normals[vC][0];
                     objmodel.normals[idx++] = normals[vC][1];
                     objmodel.normals[idx++] = normals[vC][2];
+                    objmodel.normalsIndex[idx2++] = vA;
+                    objmodel.normalsIndex[idx2++] = vB;
+                    objmodel.normalsIndex[idx2++] = vC;
+
                 }
 
             }

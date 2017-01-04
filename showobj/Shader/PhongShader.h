@@ -25,5 +25,5 @@
 @property (readwrite) GLint uDiffuse;
 @property (readwrite) GLint uSpecular;
 @property (readwrite) GLint uTexture;
-
+@property (readwrite) GLint hasTexture;
 @end

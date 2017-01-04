@@ -34,6 +34,7 @@
         self.uDiffuse = glGetUniformLocation(self.program, "uDiffuse");
         self.uSpecular = glGetUniformLocation(self.program, "uSpecular");
         self.uTexture = glGetUniformLocation(self.program, "uTexture");
+        self.hasTexture =glGetUniformLocation(self.program, "hasTexture");
     }
     
     return self;

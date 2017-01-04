@@ -17,7 +17,7 @@ public:
     float * normals;
     float * verticesIndex;
     float * texelsIndex;
-    float * normaIndex;
+    float * normalsIndex;
     
     int materials;
     int * firsts;
@@ -45,12 +45,21 @@ public:
         if(positions)
             delete positions;
         positions = NULL;
+        if(verticesIndex)
+            delete verticesIndex;
+        verticesIndex = NULL;
         if(texels)
             delete texels;
         texels = NULL;
+        if(texelsIndex)
+            delete texelsIndex;
+        texelsIndex = NULL;
         if(normals)
             delete normals;
         normals = NULL;
+        if(normalsIndex)
+            delete normalsIndex;
+        normalsIndex = NULL;
         materials =0;
         if(firsts)
             delete firsts;

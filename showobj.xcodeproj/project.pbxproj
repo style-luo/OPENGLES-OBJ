@@ -12,12 +12,6 @@
 		B623CB2F1E10E0B600AFB2BE /* 20160520033826715638.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B623CB2A1E10E0B600AFB2BE /* 20160520033826715638.jpg */; };
 		B623CB301E10E0B600AFB2BE /* zuozi.mtl in Resources */ = {isa = PBXBuildFile; fileRef = B623CB2B1E10E0B600AFB2BE /* zuozi.mtl */; };
 		B623CB311E10E0B600AFB2BE /* zuozi.obj in Resources */ = {isa = PBXBuildFile; fileRef = B623CB2C1E10E0B600AFB2BE /* zuozi.obj */; };
-		B623CB381E10E0D500AFB2BE /* chuang.mtl in Resources */ = {isa = PBXBuildFile; fileRef = B623CB321E10E0D500AFB2BE /* chuang.mtl */; };
-		B623CB391E10E0D500AFB2BE /* chuang.obj in Resources */ = {isa = PBXBuildFile; fileRef = B623CB331E10E0D500AFB2BE /* chuang.obj */; };
-		B623CB3A1E10E0D500AFB2BE /* 20160608042307412232.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B623CB341E10E0D500AFB2BE /* 20160608042307412232.jpg */; };
-		B623CB3B1E10E0D500AFB2BE /* 20160608042307412514.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B623CB351E10E0D500AFB2BE /* 20160608042307412514.jpg */; };
-		B623CB3C1E10E0D500AFB2BE /* 20160608042307412695.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B623CB361E10E0D500AFB2BE /* 20160608042307412695.jpg */; };
-		B623CB3D1E10E0D500AFB2BE /* 20160608042307412869.JPG in Resources */ = {isa = PBXBuildFile; fileRef = B623CB371E10E0D500AFB2BE /* 20160608042307412869.JPG */; };
 		B668D5DD1E0A19AD009E808A /* objload.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B668D5DC1E0A19AD009E808A /* objload.cpp */; };
 		B68451F81E0947C300345633 /* ShowViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B68451F61E0947C300345633 /* ShowViewController.mm */; };
 		B6A209BF1E091A6F00E388E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A209BE1E091A6F00E388E7 /* main.m */; };
@@ -36,12 +30,6 @@
 		B623CB2A1E10E0B600AFB2BE /* 20160520033826715638.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 20160520033826715638.jpg; path = Resources/zuozi/20160520033826715638.jpg; sourceTree = "<group>"; };
 		B623CB2B1E10E0B600AFB2BE /* zuozi.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = zuozi.mtl; path = Resources/zuozi/zuozi.mtl; sourceTree = "<group>"; };
 		B623CB2C1E10E0B600AFB2BE /* zuozi.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = zuozi.obj; path = Resources/zuozi/zuozi.obj; sourceTree = "<group>"; };
-		B623CB321E10E0D500AFB2BE /* chuang.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = chuang.mtl; path = Resources/chuang/chuang.mtl; sourceTree = "<group>"; };
-		B623CB331E10E0D500AFB2BE /* chuang.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = chuang.obj; path = Resources/chuang/chuang.obj; sourceTree = "<group>"; };
-		B623CB341E10E0D500AFB2BE /* 20160608042307412232.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 20160608042307412232.jpg; path = Resources/chuang/20160608042307412232.jpg; sourceTree = "<group>"; };
-		B623CB351E10E0D500AFB2BE /* 20160608042307412514.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 20160608042307412514.jpg; path = Resources/chuang/20160608042307412514.jpg; sourceTree = "<group>"; };
-		B623CB361E10E0D500AFB2BE /* 20160608042307412695.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 20160608042307412695.jpg; path = Resources/chuang/20160608042307412695.jpg; sourceTree = "<group>"; };
-		B623CB371E10E0D500AFB2BE /* 20160608042307412869.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 20160608042307412869.JPG; path = Resources/chuang/20160608042307412869.JPG; sourceTree = "<group>"; };
 		B668D5DC1E0A19AD009E808A /* objload.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = objload.cpp; path = objload/objload.cpp; sourceTree = "<group>"; };
 		B668D5DF1E0A1AAE009E808A /* objload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = objload.h; path = objload/objload.h; sourceTree = "<group>"; };
 		B68451F61E0947C300345633 /* ShowViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ShowViewController.mm; sourceTree = "<group>"; };
@@ -82,19 +70,6 @@
 				B623CB2C1E10E0B600AFB2BE /* zuozi.obj */,
 			);
 			name = zuozi;
-			sourceTree = "<group>";
-		};
-		B623CB251E10E0A300AFB2BE /* chuang */ = {
-			isa = PBXGroup;
-			children = (
-				B623CB321E10E0D500AFB2BE /* chuang.mtl */,
-				B623CB331E10E0D500AFB2BE /* chuang.obj */,
-				B623CB341E10E0D500AFB2BE /* 20160608042307412232.jpg */,
-				B623CB351E10E0D500AFB2BE /* 20160608042307412514.jpg */,
-				B623CB361E10E0D500AFB2BE /* 20160608042307412695.jpg */,
-				B623CB371E10E0D500AFB2BE /* 20160608042307412869.JPG */,
-			);
-			name = chuang;
 			sourceTree = "<group>";
 		};
 		B668D5DB1E0A1936009E808A /* objload */ = {
@@ -164,7 +139,6 @@
 		B6A209E81E09410500E388E7 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				B623CB251E10E0A300AFB2BE /* chuang */,
 				B623CB241E10E09B00AFB2BE /* zuozi */,
 			);
 			name = Resource;
@@ -230,19 +204,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6A209E71E0940F400E388E7 /* Phong.vsh in Resources */,
-				B623CB381E10E0D500AFB2BE /* chuang.mtl in Resources */,
 				B623CB2E1E10E0B600AFB2BE /* 20160520033826715497.jpg in Resources */,
-				B623CB3D1E10E0D500AFB2BE /* 20160608042307412869.JPG in Resources */,
 				B623CB301E10E0B600AFB2BE /* zuozi.mtl in Resources */,
 				B623CB311E10E0B600AFB2BE /* zuozi.obj in Resources */,
-				B623CB3B1E10E0D500AFB2BE /* 20160608042307412514.jpg in Resources */,
-				B623CB3C1E10E0D500AFB2BE /* 20160608042307412695.jpg in Resources */,
 				B6A209E61E0940F400E388E7 /* Phong.fsh in Resources */,
-				B623CB3A1E10E0D500AFB2BE /* 20160608042307412232.jpg in Resources */,
 				B623CB2D1E10E0B600AFB2BE /* 20160518014050849623.jpg in Resources */,
 				B6A209CA1E091A6F00E388E7 /* Assets.xcassets in Resources */,
 				B6A209DC1E091CA300E388E7 /* Show.storyboard in Resources */,
-				B623CB391E10E0D500AFB2BE /* chuang.obj in Resources */,
 				B623CB2F1E10E0B600AFB2BE /* 20160520033826715638.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

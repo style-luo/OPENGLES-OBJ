@@ -10,10 +10,13 @@
 #import "ShowViewController.h"
 #import "PhongShader.h"
 #import "objload.h"
+//#import <vector>
 extern int loadObj(const char*  filepathOBJ,const char* filepathMTL,ObjModel & objmodel);
 CGFloat distanceBetweenPoints (CGPoint first, CGPoint second) {
     CGFloat deltaX = second.x - first.x;
     CGFloat deltaY = second.y - first.y;
+//    std::vector<int>v;
+//    v.push_back(12);
     return sqrt(deltaX*deltaX + deltaY*deltaY );
 };
 @interface ShowViewController ()
@@ -30,6 +33,7 @@ CGFloat distanceBetweenPoints (CGPoint first, CGPoint second) {
     CGPoint oneTouchPoint;
     NSString * modelName;
     GLuint modelBuffer[3];
+    GLuint modelIndexBuffer[3];
     NSMutableArray * textures;
 }
 
@@ -66,7 +70,7 @@ CGFloat distanceBetweenPoints (CGPoint first, CGPoint second) {
     glkView.context = context;
     
     // OpenGL ES Settings
-    glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
+    glClearColor(0.7f, 0.7f, 0.7f, 1.0f);
     glEnable(GL_CULL_FACE);
     glEnable(GL_DEPTH_TEST);
     // Load shader
@@ -117,6 +121,22 @@ CGFloat distanceBetweenPoints (CGPoint first, CGPoint second) {
     glEnableVertexAttribArray(self.phongShader.aNormal);
     glVertexAttribPointer(self.phongShader.aNormal, 3, GL_FLOAT, GL_FALSE, 0, NULL);
     
+    //index 版本
+//    glDeleteBuffers(3,modelIndexBuffer);
+//    glGenBuffers(3, modelIndexBuffer);
+//    glBindBuffer(GL_ARRAY_BUFFER, modelBuffer[0]);
+//    glBufferData(GL_ARRAY_BUFFER, sizeof(GL_FLOAT)*model.vertices*3, model.positions, GL_STATIC_DRAW);
+//    glEnableVertexAttribArray(self.phongShader.aPosition);
+//    glVertexAttribPointer(self.phongShader.aPosition, 3, GL_FLOAT, GL_FALSE, 0, NULL);
+//    glBindBuffer(GL_ARRAY_BUFFER, modelBuffer[1]);
+//    glBufferData(GL_ARRAY_BUFFER, sizeof(GL_FLOAT)*model.vertices*2, model.texels, GL_STATIC_DRAW);
+//    glEnableVertexAttribArray(self.phongShader.aTexel);
+//    glVertexAttribPointer(self.phongShader.aTexel, 2, GL_FLOAT, GL_FALSE, 0, NULL);
+//    glBindBuffer(GL_ARRAY_BUFFER, modelBuffer[2]);
+//    glBufferData(GL_ARRAY_BUFFER, sizeof(GL_FLOAT)*model.vertices*3, model.normals, GL_STATIC_DRAW);
+//    glEnableVertexAttribArray(self.phongShader.aNormal);
+//    glVertexAttribPointer(self.phongShader.aNormal, 3, GL_FLOAT, GL_FALSE, 0, NULL);
+
 
     
     
@@ -165,7 +185,11 @@ CGFloat distanceBetweenPoints (CGPoint first, CGPoint second) {
 }
 - (void)loadTexture:(NSString*) textureName
 {
-    if([textureName isEqualToString:@""])return;
+    if([textureName isEqualToString:@""])
+    {
+        [textures addObject:[NSNull null]];
+        return;
+    }
     NSDictionary* options = @{GLKTextureLoaderOriginBottomLeft: @YES};
     NSError* error;
     NSString* path = [[NSBundle mainBundle] pathForResource:textureName ofType:nil];
@@ -180,6 +204,13 @@ CGFloat distanceBetweenPoints (CGPoint first, CGPoint second) {
 - (void)setTexture:(int) idx
 {
     if([textures count]<=idx) return ;
+    if([textures objectAtIndex:idx] == [NSNull null])
+    {
+        glDisable(GL_TEXTURE_2D);
+        glUniform1i(self.phongShader.hasTexture,false);
+        return ;
+    }
+    glUniform1i(self.phongShader.hasTexture,true);
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, ((GLKTextureInfo* )[textures objectAtIndex:idx]).name);
     glUniform1i(self.phongShader.uTexture,0);
@@ -188,6 +219,8 @@ CGFloat distanceBetweenPoints (CGPoint first, CGPoint second) {
 {
     for(int i=0;i<[textures count];i++)
     {
+        if([textures objectAtIndex:i] ==  [NSNull null])
+            continue;
         GLuint name = ((GLKTextureInfo* )[textures objectAtIndex:i]).name;
         glDeleteTextures(1, &name);
     }

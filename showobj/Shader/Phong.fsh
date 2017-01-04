@@ -10,6 +10,7 @@ varying highp vec2 vTexel;
 // Uniforms
 uniform highp vec3 uDiffuse;
 uniform highp vec3 uSpecular;
+uniform bool hasTexture;
 uniform sampler2D uTexture;
  
 void main(void)
@@ -48,7 +49,7 @@ void main(void)
     
     // Surface
     highp vec3 surface;
-    if(decal.a > 0.0)
+    if(hasTexture && decal.a > 0.0)
         surface = decal.rgb*df + decal.rgb*sf;
     else
         surface = Ip;
